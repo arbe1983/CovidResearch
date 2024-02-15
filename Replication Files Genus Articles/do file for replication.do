@@ -139,7 +139,7 @@ recode isced (1 2=1)(3 4=2)(5=3), gen (isced3)
 
 ****add info on school closure at the NUTS3 level
 sort id submitdate
-merge m:1 id submitdate using "/Users/lunabellani/Cloud_Kn/Corona Survey Gender Module/GendervsEduInequality/opening policies.dta"
+merge m:1 id submitdate using "opening policies.dta"
 
  recode schoolkita (2 3 = 2) (4 =3), gen(schoolkita_new)
  tab schoolkita_new
