@@ -1,9 +1,10 @@
+*******************************
+*** Do File for Replication ***
+*******************************
 
-******************
-*** Set folders ***
-*******************
+Data available from Gesis: https://doi.org/10.7802/2456
 
-use "${data}Corona_W3_Kantar_full_v02.dta", clear
+use "COVID-19 and Social Inequality A - Welle 3.dta", clear
 
 ge treat=close_RandNumber
 ge kita=close1_1
@@ -138,6 +139,8 @@ recode isced (1 2=1)(3 4=2)(5=3), gen (isced3)
 **missing 162 obs when using this variable
 
 ****add info on school closure at the NUTS3 level
+* File available in same folder on GitHub *
+
 sort id submitdate
 merge m:1 id submitdate using "opening policies.dta"
 
